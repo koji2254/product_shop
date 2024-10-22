@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <script src="https://cdn.tailwindcss.com"></script>
-   <title>My Products</title>
-</head>
-<body>
-   <nav class="p-5 border flex justify-between items-center">
-      <div class="font-bold">
-         <h1>My Products Tracker</h1>
-      </div>
-      <div class="">
-         <ul class="flex justify-between items-center gap-3">
-            <li><a href="/login" class="text-sm p-2 border hover:bg-gray-200">Login</a></li>
-            <li><a href="/register" class="text-sm p-2 border hover:bg-gray-200">Register</a></li>
-         </ul>
-      </div>
-   </nav>
-
+@include('components.NavBar')
    
 <div class="w-full mt-5">
    <div class="w-96 border rounded p-5 m-auto">

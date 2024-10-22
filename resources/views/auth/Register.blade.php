@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <script src="https://cdn.tailwindcss.com"></script>
-   <title>My Products</title>
-</head>
-<body>
-   <nav class="p-5 border flex justify-between items-center">
-      <div class="font-bold">
-         <h1>My Products Tracker</h1>
-      </div>
-      <div class="">
-         <ul class="flex justify-between items-center gap-3">
-            <li><a href="/login" class="text-sm p-2 border hover:bg-gray-200">Login</a></li>
-            <li><a href="/register" class="text-sm p-2 border hover:bg-gray-200">Register</a></li>
-         </ul>
-      </div>
-   </nav>
-
+@include('components.NavBar')
 
    
 <div class="w-full mt-5">
@@ -29,7 +8,6 @@
 
          <form action="/auth-register" class="w-full" method="POST">
             @csrf
-
             <!-- Name Input -->
             <div class="">
                <label for="name" class="text-sm non-italic">Name</label>
@@ -45,6 +23,15 @@
                <label for="email" class="text-sm non-italic">Email</label>
                <input class="w-full p-1 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary" 
                       type="email" name="email" value="{{ old('email') }}">
+               @error('email')
+                  <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+               @enderror
+            </div>
+            <!-- Phone Input -->
+            <div class="mt-2">
+               <label for="number" class="text-sm non-italic">Phone</label>
+               <input class="w-full p-1 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary" 
+                      type="text" name="phone_number" value="{{ old('phone_number') }}">
                @error('email')
                   <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                @enderror
